@@ -6,6 +6,14 @@ local function set_highlights()
 	local palette = require("flexoki.palette")
 	local styles = config.options.styles
 
+	local function get_italic(category)
+		local italic = styles.italic
+		if type(italic) == "boolean" then
+			return italic
+		end
+		return italic[category] or false
+	end
+
 	local groups = {}
 	for group, color in pairs(config.options.groups) do
 		groups[group] = utilities.parse_color(color)
@@ -33,7 +41,7 @@ local function set_highlights()
 		["@method"] = { fg = palette.magenta_two },
 		["@namespace"] = { link = "Include" },
 		["@number"] = { link = "Number" },
-		["@parameter"] = { fg = palette.purple_two, italic = styles.italic },
+		["@parameter"] = { fg = palette.purple_two, italic = get_italic("parameters") },
 		["@preproc"] = { link = "PreProc" },
 		["@punctuation"] = { fg = palette.subtle },
 		["@punctuation.bracket"] = { link = "@punctuation" },
@@ -47,7 +55,7 @@ local function set_highlights()
 		["@text.danger"] = { fg = groups.error },
 		["@text.diff.add"] = { fg = groups.git_add, bg = groups.git_add, blend = 20 },
 		["@text.diff.delete"] = { fg = groups.git_delete, bg = groups.git_delete, blend = 20 },
-		["@text.emphasis"] = { italic = styles.italic },
+		["@text.emphasis"] = { italic = get_italic("markup") },
 		["@text.environment"] = { link = "Macro" },
 		["@text.environment.name"] = { link = "Type" },
 		["@text.math"] = { link = "Special" },
@@ -101,7 +109,7 @@ local function set_highlights()
 		FloatBorder = make_border(),
 		FloatTitle = { fg = palette.cyan_two, bg = groups.panel, bold = styles.bold },
 		FoldColumn = { fg = palette.muted },
-		Folded = { fg = palette.text, bg = palette.overlay, italic = styles.italic },
+		Folded = { fg = palette.text, bg = palette.overlay, italic = get_italic("comments") },
 		IncSearch = { link = "CurSearch" },
 		LineNr = { fg = palette.muted },
 		MatchParen = { fg = palette.blue_two, bg = palette.blue_one, blend = 20 },
@@ -185,7 +193,7 @@ local function set_highlights()
 
 		Boolean = { fg = palette.magenta_two },
 		Character = { fg = palette.orange_two },
-		Comment = { fg = palette.subtle, italic = styles.italic },
+		Comment = { fg = palette.subtle, italic = get_italic("comments") },
 		Conditional = { fg = palette.blue_two },
 		Constant = { fg = palette.yellow_two },
 		Debug = { fg = palette.magenta_two },
@@ -236,7 +244,7 @@ local function set_highlights()
 		htmlH3 = { link = "markdownH3" },
 		htmlH4 = { link = "markdownH4" },
 		htmlH5 = { link = "markdownH5" },
-		htmlItalic = { italic = styles.italic },
+		htmlItalic = { italic = get_italic("markup") },
 		htmlLink = { link = "markdownUrl" },
 		htmlTag = { fg = palette.subtle },
 		htmlTagN = { fg = palette.text },
@@ -258,7 +266,7 @@ local function set_highlights()
 		markdownLinkText = { link = "markdownUrl" },
 		markdownUrl = { fg = groups.link, sp = groups.link, underline = true },
 
-		mkdCode = { fg = palette.cyan_two, italic = styles.italic },
+		mkdCode = { fg = palette.cyan_two, italic = get_italic("markup") },
 		mkdCodeDelimiter = { fg = palette.magenta_two },
 		mkdCodeEnd = { fg = palette.cyan_two },
 		mkdCodeStart = { fg = palette.cyan_two },
@@ -272,9 +280,9 @@ local function set_highlights()
 		mkdURL = { link = "markdownUrl" },
 
 		--- Identifiers
-		["@variable"] = { fg = palette.text, italic = styles.italic },
+		["@variable"] = { fg = palette.text, italic = get_italic("variables") },
 		["@variable.builtin"] = { fg = palette.red_two },
-		["@variable.parameter"] = { fg = palette.purple_two, italic = styles.italic },
+		["@variable.parameter"] = { fg = palette.purple_two, italic = get_italic("parameters") },
 		["@variable.member"] = { fg = palette.blue_two },
 
 		["@constant"] = { fg = palette.orange_two },
@@ -310,7 +318,7 @@ local function set_highlights()
 		-- ["@type.qualifier"] = {},
 
 		-- ["@attribute"] = {},
-		["@property"] = { fg = palette.blue_two, italic = styles.italic },
+		["@property"] = { fg = palette.blue_two, italic = get_italic("properties") },
 
 		--- Functions
 		["@function"] = { fg = palette.orange_two },
@@ -357,7 +365,7 @@ local function set_highlights()
 
 		--- Markup
 		["@markup.strong"] = { bold = styles.bold },
-		["@markup.italic"] = { italic = styles.italic },
+		["@markup.italic"] = { italic = get_italic("markup") },
 		["@markup.strikethrough"] = { strikethrough = true },
 		["@markup.underline"] = { underline = true },
 
@@ -571,18 +579,18 @@ local function set_highlights()
 
 		-- NeogitOrg/neogit
 		-- https://github.com/NeogitOrg/neogit/blob/master/lua/neogit/lib/hl.lua#L109-L198
-		NeogitChangeAdded = { fg = groups.git_add, bold = styles.bold, italic = styles.italic },
-		NeogitChangeBothModified = { fg = groups.git_change, bold = styles.bold, italic = styles.italic },
-		NeogitChangeCopied = { fg = groups.git_untracked, bold = styles.bold, italic = styles.italic },
-		NeogitChangeDeleted = { fg = groups.git_delete, bold = styles.bold, italic = styles.italic },
-		NeogitChangeModified = { fg = groups.git_change, bold = styles.bold, italic = styles.italic },
-		NeogitChangeNewFile = { fg = groups.git_stage, bold = styles.bold, italic = styles.italic },
-		NeogitChangeRenamed = { fg = groups.git_rename, bold = styles.bold, italic = styles.italic },
-		NeogitChangeUpdated = { fg = groups.git_change, bold = styles.bold, italic = styles.italic },
+		NeogitChangeAdded = { fg = groups.git_add, bold = styles.bold, italic = get_italic("suggestions") },
+		NeogitChangeBothModified = { fg = groups.git_change, bold = styles.bold, italic = get_italic("suggestions") },
+		NeogitChangeCopied = { fg = groups.git_untracked, bold = styles.bold, italic = get_italic("suggestions") },
+		NeogitChangeDeleted = { fg = groups.git_delete, bold = styles.bold, italic = get_italic("suggestions") },
+		NeogitChangeModified = { fg = groups.git_change, bold = styles.bold, italic = get_italic("suggestions") },
+		NeogitChangeNewFile = { fg = groups.git_stage, bold = styles.bold, italic = get_italic("suggestions") },
+		NeogitChangeRenamed = { fg = groups.git_rename, bold = styles.bold, italic = get_italic("suggestions") },
+		NeogitChangeUpdated = { fg = groups.git_change, bold = styles.bold, italic = get_italic("suggestions") },
 		NeogitDiffAddHighlight = { link = "DiffAdd" },
 		NeogitDiffContextHighlight = { bg = palette.surface },
 		NeogitDiffDeleteHighlight = { link = "DiffDelete" },
-		NeogitFilePath = { fg = palette.cyan_two, italic = styles.italic },
+		NeogitFilePath = { fg = palette.cyan_two, italic = get_italic("suggestions") },
 		NeogitHunkHeader = { bg = groups.panel },
 		NeogitHunkHeaderHighlight = { bg = groups.panel },
 
@@ -907,7 +915,7 @@ local function set_highlights()
 		AlphaShortcut = { fg = palette.magenta_two },
 
 		-- github/copilot.vim
-		CopilotSuggestion = { fg = palette.muted, italic = styles.italic },
+		CopilotSuggestion = { fg = palette.muted, italic = get_italic("suggestions") },
 
 		-- nvim-treesitter/nvim-treesitter-context
 		TreesitterContext = { bg = palette.overlay },
@@ -1009,7 +1017,7 @@ local function set_highlights()
 
 		FloatBorder = { fg = palette.muted, bg = "NONE" },
 		FloatTitle = { fg = palette.cyan_two, bg = "NONE", bold = styles.bold },
-		Folded = { fg = palette.text, bg = "NONE", italic = styles.italic },
+		Folded = { fg = palette.text, bg = "NONE", italic = get_italic("comments") },
 		NormalFloat = { bg = "NONE" },
 		Normal = { fg = palette.text, bg = "NONE" },
 		NormalNC = { fg = palette.text, bg = config.options.dim_inactive_windows and palette._nc or "NONE" },

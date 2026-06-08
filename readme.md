@@ -53,7 +53,19 @@ require("flexoki").setup({
 
     styles = {
         bold = true,
-        italic = false,
+        italic = {
+            comments = false,
+            functions = false,
+            keywords = false,
+            parameters = false,
+            variables = false,
+            properties = false,
+            types = false,
+            strings = false,
+            markup = false,
+            suggestions = false,
+        },
+        transparency = false,
     },
 
     groups = {

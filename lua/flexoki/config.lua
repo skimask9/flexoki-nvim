@@ -31,7 +31,18 @@ config.options = {
 
 	styles = {
 		bold = true,
-		italic = false,
+		italic = {
+			comments = false,
+			functions = false,
+			keywords = false,
+			parameters = false,
+			variables = false,
+			properties = false,
+			types = false,
+			strings = false,
+			markup = false,
+			suggestions = false,
+		},
 		transparency = false,
 	},
 
@@ -139,9 +150,35 @@ local function migrate(options)
 	-- because of `disable_italics` existing.
 	options.styles.bold = not (options.disable_bold or options.disable_bolds) and options.styles.bold or false
 
-	-- Similar to bold options, `disable_italic` never existed but could be a
-	-- common typo of the actual `disable_italics`.
-	options.styles.italic = not (options.disable_italic or options.disable_italics) and options.styles.italic or false
+	-- Handle backward compatibility for italic option
+	-- If italic is a boolean, apply to all categories
+	if type(options.styles.italic) == "boolean" then
+		local italic_value = not (options.disable_italic or options.disable_italics) and options.styles.italic or false
+		options.styles.italic = {
+			comments = italic_value,
+			functions = italic_value,
+			keywords = italic_value,
+			parameters = italic_value,
+			variables = italic_value,
+			properties = italic_value,
+			types = italic_value,
+			strings = italic_value,
+			markup = italic_value,
+			suggestions = italic_value,
+		}
+	else
+		options.styles.italic = options.styles.italic or {}
+		options.styles.italic.comments = options.styles.italic.comments or false
+		options.styles.italic.functions = options.styles.italic.functions or false
+		options.styles.italic.keywords = options.styles.italic.keywords or false
+		options.styles.italic.parameters = options.styles.italic.parameters or false
+		options.styles.italic.variables = options.styles.italic.variables or false
+		options.styles.italic.properties = options.styles.italic.properties or false
+		options.styles.italic.types = options.styles.italic.types or false
+		options.styles.italic.strings = options.styles.italic.strings or false
+		options.styles.italic.markup = options.styles.italic.markup or false
+		options.styles.italic.suggestions = options.styles.italic.suggestions or false
+	end
 
 	-- Set h1 through h6 to the same color if only one is specified
 	if type(options.groups.headings) == "string" then
