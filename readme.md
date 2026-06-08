@@ -37,6 +37,21 @@ Install `flexoki-nvim` using your favourite plugin manager:
 > [!IMPORTANT]
 > Configure options _before_ setting colorscheme.
 
+Each `italic` category controls specific highlight groups:
+
+| Category | Highlight groups |
+|---|---|
+| `comments` | `Comment`, `Folded` |
+| `functions` | `Function`, `@function`, `@function.builtin`, `@function.method`, `@function.method.call`, `@function.macro` |
+| `keywords` | `Keyword`, `@keyword` |
+| `parameters` | `@parameter`, `@variable.parameter` |
+| `variables` | `@variable` |
+| `properties` | `@property` |
+| `strings` | `String`, `@string` |
+| `types` | `Type`, `@type`, `@type.builtin` |
+| `markup` | `@text.emphasis`, `@markup.italic`, `htmlItalic`, `mkdCode` |
+| `suggestions` | `NeogitChange*`, `NeogitFilePath`, `CopilotSuggestion` |
+
 Flexoki has two variants: moon, and dawn. By default, `vim.o.background` is followed, using dawn when light and moon when dark.
 
 Colour values accept named colours from the palette, e.g. "cyan_two", or valid hex, e.g. "#fa8072".

@@ -202,10 +202,10 @@ local function set_highlights()
 		Error = { fg = palette.red_two },
 		Exception = { fg = palette.blue_two },
 		Float = { fg = palette.orange_two },
-		Function = { fg = palette.orange_two },
+		Function = { fg = palette.orange_two, italic = get_italic("functions") },
 		Identifier = { fg = palette.text },
 		Include = { fg = palette.blue_two },
-		Keyword = { fg = palette.green_two },
+		Keyword = { fg = palette.green_two, italic = get_italic("keywords") },
 		Label = { fg = palette.cyan_two },
 		LspCodeLens = { fg = palette.subtle },
 		LspCodeLensSeparator = { fg = palette.muted },
@@ -224,11 +224,11 @@ local function set_highlights()
 		SpecialComment = { fg = palette.purple_two },
 		Statement = { fg = palette.blue_two, bold = styles.bold },
 		StorageClass = { fg = palette.cyan_two },
-		String = { fg = palette.cyan_two },
+		String = { fg = palette.cyan_two, italic = get_italic("strings") },
 		Structure = { fg = palette.cyan_two },
 		Tag = { fg = palette.cyan_two },
 		Todo = { link = "@comment.todo" },
-		Type = { fg = palette.cyan_two },
+		Type = { fg = palette.cyan_two, italic = get_italic("types") },
 		TypeDef = { link = "Type" },
 		Underlined = { fg = palette.purple_two, underline = true },
 
@@ -312,8 +312,8 @@ local function set_highlights()
 		["@float"] = { link = "Number" },
 
 		--- Types
-		["@type"] = { fg = palette.cyan_two },
-		["@type.builtin"] = { fg = palette.cyan_two, bold = styles.bold },
+		["@type"] = { fg = palette.cyan_two, italic = get_italic("types") },
+		["@type.builtin"] = { fg = palette.cyan_two, bold = styles.bold, italic = get_italic("types") },
 		-- ["@type.definition"] = {},
 		-- ["@type.qualifier"] = {},
 
@@ -321,12 +321,12 @@ local function set_highlights()
 		["@property"] = { fg = palette.blue_two, italic = get_italic("properties") },
 
 		--- Functions
-		["@function"] = { fg = palette.orange_two },
-		["@function.builtin"] = { fg = palette.orange_two },
+		["@function"] = { fg = palette.orange_two, italic = get_italic("functions") },
+		["@function.builtin"] = { fg = palette.orange_two, italic = get_italic("functions") },
 		-- ["@function.call"] = {},
 		["@function.macro"] = { link = "Function" },
-		["@function.method"] = { fg = palette.orange_two },
-		["@function.method.call"] = { fg = palette.orange_two },
+		["@function.method"] = { fg = palette.orange_two, italic = get_italic("functions") },
+		["@function.method.call"] = { fg = palette.orange_two, italic = get_italic("functions") },
 
 		["@constructor"] = { fg = palette.cyan_two },
 		["@operator"] = { link = "Operator" },
