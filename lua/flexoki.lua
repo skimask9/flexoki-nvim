@@ -1053,8 +1053,8 @@ local function set_highlights()
 		-- folke/snacks.nvim
 		SnacksNormal = { bg = groups.panel },
 		SnacksNormalNC = { bg = palette.surface },
-		SnacksTitle = { fg = palette.cyan_two, bg = palette.blue_one, bold = styles.bold },
-		SnacksWinBar = { fg = palette.cyan_two, bg = palette.blue_one, bold = styles.bold },
+		SnacksTitle = { fg = palette.text, bg = palette.purple_one, bold = styles.bold },
+		SnacksWinBar = { fg = palette.text, bg = palette.purple_one, bold = styles.bold },
 		SnacksWinBarNC = { fg = palette.subtle, bg = groups.panel },
 
 		SnacksDashboardHeader = { fg = palette.blue_two },
@@ -1113,8 +1113,8 @@ local function set_highlights()
 		MasonNormal = { bg = "NONE" },
 		SnacksNormal = { bg = "NONE" },
 		SnacksNormalNC = { bg = "NONE" },
-		SnacksTitle = { fg = palette.cyan_two, bg = "NONE", bold = styles.bold },
-		SnacksWinBar = { fg = palette.cyan_two, bg = "NONE", bold = styles.bold },
+		SnacksTitle = { fg = palette.purple_two, bg = "NONE", bold = styles.bold },
+		SnacksWinBar = { fg = palette.purple_two, bg = "NONE", bold = styles.bold },
 		SnacksWinBarNC = { fg = palette.subtle, bg = "NONE" },
 
 		SnacksPickerNormal = { bg = "NONE" },
