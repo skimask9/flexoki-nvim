@@ -191,7 +191,7 @@ Flexoki includes highlight definitions for the following plugins:
 | [pounce.nvim](https://github.com/rlane/pounce.nvim) | PounceAccept, PounceAcceptBest, PounceGap, PounceMatch |
 | [rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim) | 7 delimiters colors (RainbowDelimiter*) |
 | [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) | RenderMarkdownBullet, RenderMarkdownH*Bg, RenderMarkdownQuote, RenderMarkdownCode and more |
-| [snacks.nvim](https://github.com/folke/snacks.nvim) | SnacksDashboard*, SnacksPicker*, SnacksNotifier*, SnacksIndent*, SnacksWords |
+| [snacks.nvim](https://github.com/folke/snacks.nvim) | SnacksNormal, SnacksTitle, SnacksWinBar, SnacksDashboard*, SnacksPicker*, SnacksNotifier*, SnacksIndent*, SnacksWords |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) | TelescopeBorder, TelescopeMatching, TelescopeNormal, TelescopeSelection, TelescopeTitle and more |
 | [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) | TodoBg/Fg/Sign for TODO, WARN, HACK, FIX, NOTE, PERF, TEST |
 | [tiny-cmdline.nvim](https://github.com/rachartier/tiny-cmdline.nvim) | TinyCmdlineNormal, TinyCmdlineBorder, TinyCmdlineTitle |

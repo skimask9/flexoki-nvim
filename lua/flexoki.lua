@@ -1051,6 +1051,12 @@ local function set_highlights()
 		LazyUrl = { fg = groups.link },
 
 		-- folke/snacks.nvim
+		SnacksNormal = { bg = groups.panel },
+		SnacksNormalNC = { bg = palette.surface },
+		SnacksTitle = { fg = palette.cyan_two, bg = palette.blue_one, bold = styles.bold },
+		SnacksWinBar = { fg = palette.cyan_two, bg = palette.blue_one, bold = styles.bold },
+		SnacksWinBarNC = { fg = palette.subtle, bg = groups.panel },
+
 		SnacksDashboardHeader = { fg = palette.blue_two },
 		SnacksDashboardKey = { fg = palette.magenta_two },
 		SnacksDashboardDesc = { fg = palette.subtle },
@@ -1058,7 +1064,7 @@ local function set_highlights()
 		SnacksDashboardFooter = { fg = palette.purple_two },
 		SnacksPickerBorder = make_border(),
 		SnacksPickerNormal = { link = "NormalFloat" },
-		SnacksPickerTitle = { link = "FloatTitle" },
+		SnacksPickerTitle = { link = "SnacksTitle" },
 		SnacksNotifierError = { fg = groups.error },
 		SnacksNotifierInfo = { fg = groups.info },
 		SnacksNotifierWarn = { fg = groups.warn },
@@ -1105,6 +1111,12 @@ local function set_highlights()
 
 		LazyNormal = { bg = "NONE" },
 		MasonNormal = { bg = "NONE" },
+		SnacksNormal = { bg = "NONE" },
+		SnacksNormalNC = { bg = "NONE" },
+		SnacksTitle = { fg = palette.cyan_two, bg = "NONE", bold = styles.bold },
+		SnacksWinBar = { fg = palette.cyan_two, bg = "NONE", bold = styles.bold },
+		SnacksWinBarNC = { fg = palette.subtle, bg = "NONE" },
+
 		SnacksPickerNormal = { bg = "NONE" },
 
 		TinyCmdlineNormal = { bg = "NONE" },
