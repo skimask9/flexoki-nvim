@@ -771,7 +771,7 @@ local function set_highlights()
 		NoiceCursor = { fg = palette.highlight_high, bg = palette.text },
 
 		-- rachartier/tiny-cmdline.nvim
-		TinyCmdlineNormal = { bg = palette.base },
+		TinyCmdlineNormal = { bg = "NONE" },
 		TinyCmdlineBorder = { fg = groups.border },
 		TinyCmdlineTitle = { fg = palette.cyan_two, bold = styles.bold },
 
