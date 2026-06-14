@@ -194,6 +194,7 @@ Flexoki includes highlight definitions for the following plugins:
 | [snacks.nvim](https://github.com/folke/snacks.nvim) | SnacksDashboard*, SnacksPicker*, SnacksNotifier*, SnacksIndent*, SnacksWords |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) | TelescopeBorder, TelescopeMatching, TelescopeNormal, TelescopeSelection, TelescopeTitle and more |
 | [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) | TodoBg/Fg/Sign for TODO, WARN, HACK, FIX, NOTE, PERF, TEST |
+| [tiny-cmdline.nvim](https://github.com/rachartier/tiny-cmdline.nvim) | TinyCmdlineNormal, TinyCmdlineBorder, TinyCmdlineTitle |
 | [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) | Terminal window highlights (via plugin module) |
 | [trouble.nvim](https://github.com/folke/trouble.nvim) | TroubleNormal, TroubleText, TroubleSource, TroubleCount, TroubleFolder, TroubleIndent and more |
 | [vim-illuminate](https://github.com/RRethy/vim-illuminate) | IlluminatedWordRead, IlluminatedWordText, IlluminatedWordWrite |

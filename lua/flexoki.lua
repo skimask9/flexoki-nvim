@@ -770,6 +770,11 @@ local function set_highlights()
 		-- folke/noice.nvim
 		NoiceCursor = { fg = palette.highlight_high, bg = palette.text },
 
+		-- rachartier/tiny-cmdline.nvim
+		TinyCmdlineNormal = { bg = groups.panel },
+		TinyCmdlineBorder = make_border(),
+		TinyCmdlineTitle = { fg = palette.cyan_two, bold = styles.bold },
+
 		-- folke/trouble.nvim
 		TroubleNormal = { fg = palette.text, bg = groups.panel },
 		TroubleNormalNC = { fg = palette.subtle, bg = groups.panel },
@@ -1101,6 +1106,8 @@ local function set_highlights()
 		LazyNormal = { bg = "NONE" },
 		MasonNormal = { bg = "NONE" },
 		SnacksPickerNormal = { bg = "NONE" },
+
+		TinyCmdlineNormal = { bg = "NONE" },
 
 		WhichKeyFloat = { bg = "NONE" },
 		WhichKeyNormal = { bg = "NONE" },
