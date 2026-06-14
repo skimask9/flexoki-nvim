@@ -771,9 +771,15 @@ local function set_highlights()
 		NoiceCursor = { fg = palette.highlight_high, bg = palette.text },
 
 		-- folke/trouble.nvim
-		TroubleText = { fg = palette.subtle },
-		TroubleCount = { fg = palette.purple_two, bg = palette.surface },
 		TroubleNormal = { fg = palette.text, bg = groups.panel },
+		TroubleNormalNC = { fg = palette.subtle, bg = groups.panel },
+		TroubleText = { fg = palette.text },
+		TroubleTextFocus = { fg = palette.text },
+		TroubleSource = { fg = palette.purple_two },
+		TroubleIndent = { fg = palette.muted },
+		TroubleFolder = { fg = palette.cyan_two },
+		TroubleFile = { fg = palette.text },
+		TroubleCount = { fg = palette.purple_two, bg = palette.surface },
 
 		-- echasnovski/mini.nvim
 		MiniAnimateCursor = { reverse = true, nocombine = true },
@@ -1007,6 +1013,56 @@ local function set_highlights()
 
 		-- sindrets/diffview.nvim
 		DiffViewDiffAdd = { bg = palette.green_zero },
+		DiffViewDiffDelete = { bg = palette.red_two, blend = 10 },
+		DiffViewDiffChange = { bg = palette.yellow_one, blend = 10 },
+		DiffViewDiffText = { bg = palette.blue_one, blend = 20 },
+
+		-- williamboman/mason.nvim
+		MasonHeader = { fg = palette.base, bg = palette.magenta_two },
+		MasonHeaderSecondary = { fg = palette.base, bg = palette.cyan_two },
+		MasonHeading = { fg = palette.cyan_two, bold = styles.bold },
+		MasonNormal = { link = "NormalFloat" },
+		MasonHighlight = { fg = palette.cyan_two },
+		MasonHighlightBlock = { fg = palette.base, bg = palette.cyan_two },
+		MasonHighlightBlockBold = { fg = palette.base, bg = palette.cyan_two, bold = styles.bold },
+		MasonMuted = { fg = palette.muted },
+		MasonMutedBlock = { fg = palette.base, bg = palette.muted },
+
+		-- folke/lazy.nvim
+		LazyNormal = { link = "NormalFloat" },
+		LazyButton = { fg = palette.text, bg = palette.overlay },
+		LazyButtonActive = { fg = palette.base, bg = palette.cyan_two },
+		LazyCommit = { fg = palette.purple_two },
+		LazyCommitIssue = { link = "LazyCommit" },
+		LazyCommitType = { fg = palette.orange_two },
+		LazyDir = { fg = palette.cyan_two },
+		LazyH1 = { fg = palette.cyan_two, bg = groups.panel, bold = styles.bold },
+		LazyH2 = { fg = palette.magenta_two, bold = styles.bold },
+		LazyProp = { fg = palette.subtle },
+		LazyReason = { fg = palette.subtle },
+		LazySpecial = { fg = palette.purple_two },
+		LazyTask = { fg = palette.subtle },
+		LazyTaskOutput = { fg = palette.subtle },
+		LazyUrl = { fg = groups.link },
+
+		-- folke/snacks.nvim
+		SnacksDashboardHeader = { fg = palette.blue_two },
+		SnacksDashboardKey = { fg = palette.magenta_two },
+		SnacksDashboardDesc = { fg = palette.subtle },
+		SnacksDashboardIcon = { fg = palette.cyan_two },
+		SnacksDashboardFooter = { fg = palette.purple_two },
+		SnacksPickerBorder = make_border(),
+		SnacksPickerNormal = { link = "NormalFloat" },
+		SnacksPickerTitle = { link = "FloatTitle" },
+		SnacksNotifierError = { fg = groups.error },
+		SnacksNotifierInfo = { fg = groups.info },
+		SnacksNotifierWarn = { fg = groups.warn },
+		SnacksNotifierDebug = { fg = palette.muted },
+		SnacksNotifierTrace = { fg = palette.subtle },
+		SnacksNotifierTitle = { fg = palette.cyan_two },
+		SnacksIndent = { fg = palette.overlay },
+		SnacksIndentScope = { fg = palette.cyan_two },
+		SnacksWords = { fg = palette.orange_two, undercurl = true },
 	}
 	local transparency_highlights = {
 		DiagnosticVirtualTextError = { fg = groups.error },
@@ -1040,6 +1096,11 @@ local function set_highlights()
 		TelescopeSelectionCaret = { fg = palette.magenta_two },
 
 		TroubleNormal = { bg = "NONE" },
+		TroubleNormalNC = { fg = palette.subtle, bg = "NONE" },
+
+		LazyNormal = { bg = "NONE" },
+		MasonNormal = { bg = "NONE" },
+		SnacksPickerNormal = { bg = "NONE" },
 
 		WhichKeyFloat = { bg = "NONE" },
 		WhichKeyNormal = { bg = "NONE" },
