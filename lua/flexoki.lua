@@ -772,7 +772,7 @@ local function set_highlights()
 
 		-- rachartier/tiny-cmdline.nvim
 		TinyCmdlineNormal = { bg = groups.panel },
-		TinyCmdlineBorder = make_border(),
+		TinyCmdlineBorder = { fg = groups.border },
 		TinyCmdlineTitle = { fg = palette.cyan_two, bold = styles.bold },
 
 		-- folke/trouble.nvim
