@@ -358,10 +358,10 @@ local function set_highlights()
 
 		["@comment.error"] = { fg = groups.error },
 		["@comment.warning"] = { fg = groups.warn },
-		["@comment.todo"] = { fg = groups.todo, bg = groups.todo, blend = 20 },
-		["@comment.hint"] = { fg = groups.hint, bg = groups.hint, blend = 20 },
-		["@comment.info"] = { fg = groups.info, bg = groups.info, blend = 20 },
-		["@comment.note"] = { fg = groups.note, bg = groups.note, blend = 20 },
+		["@comment.todo"] = { fg = groups.todo },
+		["@comment.hint"] = { fg = groups.hint },
+		["@comment.info"] = { fg = groups.info },
+		["@comment.note"] = { fg = groups.note },
 
 		--- Markup
 		["@markup.strong"] = { bold = styles.bold },
@@ -991,13 +991,13 @@ local function set_highlights()
 		AvanteReversedThirdTitle = { fg = palette.purple_two },
 
 		-- folke/todo-comments.nvim
-		TodoBgTODO = { fg = groups.todo },
-		TodoBgWARN = { fg = groups.warn },
-		TodoBgHACK = { fg = groups.warn },
-		TodoBgFIX = { fg = groups.error },
-		TodoBgNOTE = { fg = groups.note },
-		TodoBgPERF = { fg = groups.info },
-		TodoBgTEST = { fg = groups.info },
+		TodoBgTODO = { fg = groups.todo, bg = groups.todo, blend = 20 },
+		TodoBgWARN = { fg = groups.warn, bg = groups.warn, blend = 20 },
+		TodoBgHACK = { fg = groups.warn, bg = groups.warn, blend = 20 },
+		TodoBgFIX = { fg = groups.error, bg = groups.error, blend = 20 },
+		TodoBgNOTE = { fg = groups.note, bg = groups.note, blend = 20 },
+		TodoBgPERF = { fg = groups.info, bg = groups.info, blend = 20 },
+		TodoBgTEST = { fg = groups.info, bg = groups.info, blend = 20 },
 		TodoFgTODO = { fg = groups.todo },
 		TodoFgWARN = { fg = groups.warn },
 		TodoFgHACK = { link = "TodoFgWARN" },
