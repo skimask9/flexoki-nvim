@@ -24,7 +24,7 @@ local function set_highlights()
 		return {
 			fg = fg,
 			bg = (config.options.extend_background_behind_borders and not styles.transparency) and palette.surface
-				or "NONE",
+					or "NONE",
 		}
 	end
 
@@ -991,13 +991,13 @@ local function set_highlights()
 		AvanteReversedThirdTitle = { fg = palette.purple_two },
 
 		-- folke/todo-comments.nvim
-		TodoBgTODO = { link = "@comment.todo" },
-		TodoBgWARN = { fg = groups.warn, bg = groups.warn, blend = 20 },
-		TodoBgHACK = { link = "@comment.warn" },
-		TodoBgFIX = { fg = groups.error, bg = groups.error, blend = 20 },
-		TodoBgNOTE = { link = "@comment.note" },
-		TodoBgPERF = { link = "@comment.info" },
-		TodoBgTEST = { link = "@comment.info" },
+		TodoBgTODO = { fg = groups.todo },
+		TodoBgWARN = { fg = groups.warn },
+		TodoBgHACK = { fg = groups.warn },
+		TodoBgFIX = { fg = groups.error },
+		TodoBgNOTE = { fg = groups.note },
+		TodoBgPERF = { fg = groups.info },
+		TodoBgTEST = { fg = groups.info },
 		TodoFgTODO = { fg = groups.todo },
 		TodoFgWARN = { fg = groups.warn },
 		TodoFgHACK = { link = "TodoFgWARN" },
@@ -1195,22 +1195,22 @@ local function set_highlights()
 
 	--- Terminal
 	if config.options.enable.terminal then
-		vim.g.terminal_color_0 = palette.overlay -- black
-		vim.g.terminal_color_8 = palette.subtle -- bright black
-		vim.g.terminal_color_1 = palette.red_two -- red
-		vim.g.terminal_color_9 = palette.red_two -- bright red
-		vim.g.terminal_color_2 = palette.blue_two -- green
-		vim.g.terminal_color_10 = palette.blue_two -- bright green
+		vim.g.terminal_color_0 = palette.overlay    -- black
+		vim.g.terminal_color_8 = palette.subtle     -- bright black
+		vim.g.terminal_color_1 = palette.red_two    -- red
+		vim.g.terminal_color_9 = palette.red_two    -- bright red
+		vim.g.terminal_color_2 = palette.blue_two   -- green
+		vim.g.terminal_color_10 = palette.blue_two  -- bright green
 		vim.g.terminal_color_3 = palette.orange_two -- yellow_two
 		vim.g.terminal_color_11 = palette.orange_two -- bright yellow_two
-		vim.g.terminal_color_4 = palette.cyan_two -- blue
-		vim.g.terminal_color_12 = palette.cyan_two -- bright blue
+		vim.g.terminal_color_4 = palette.cyan_two   -- blue
+		vim.g.terminal_color_12 = palette.cyan_two  -- bright blue
 		vim.g.terminal_color_5 = palette.purple_two -- magenta
 		vim.g.terminal_color_13 = palette.purple_two -- bright magenta
 		vim.g.terminal_color_6 = palette.magenta_two -- cyan
 		vim.g.terminal_color_14 = palette.magenta_two -- bright cyan
-		vim.g.terminal_color_7 = palette.text -- white
-		vim.g.terminal_color_15 = palette.text -- bright white
+		vim.g.terminal_color_7 = palette.text       -- white
+		vim.g.terminal_color_15 = palette.text      -- bright white
 
 		-- Support StatusLineTerm & StatusLineTermNC from vim
 		vim.cmd([[
